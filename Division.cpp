@@ -4,7 +4,7 @@
 #include "BigInteger.hpp"
 
 // long realization
-auto BigInteger::division_to_long(BigInteger A, BigInteger B) -> BigInteger {
+auto BigInteger::division_to_long(const BigInteger &A, const BigInteger &B) -> BigInteger {
     unsigned int num = B.digits.back();
     if (num == 0) {
         BigInteger N;
@@ -19,10 +19,12 @@ auto BigInteger::division_to_long(BigInteger A, BigInteger B) -> BigInteger {
     R.is_negate = false;
     BigInteger M = division_to_short(sum(L, R), TWO);
     bool sign_tnp = (A.is_negate ^ B.is_negate);
-    A.is_negate = false;
-    B.is_negate = false;
+    BigInteger A_new = A;
+    BigInteger B_new = B;
+    A_new.is_negate = false;
+    B_new.is_negate = false;
     while (compare(sum(L, ONE), R) == -1) {
-        short tmp = compare(multiplication(M, B), A);
+        short tmp = compare(multiplication(M, B_new), A_new);
         if (tmp < 0) {
             L = M;
         } else if (tmp > 0) {
@@ -60,10 +62,10 @@ auto BigInteger::division_to_short(const BigInteger &A, const int &B) -> BigInte
     return C;
 }
 
-auto operator/(BigInteger &A, BigInteger &B) -> BigInteger {
+auto operator/(const BigInteger &A, const BigInteger &B) -> BigInteger {
     return BigInteger::division_to_long(A, B);
 }
 
-auto operator%(BigInteger &A, BigInteger &B) -> BigInteger {
+auto operator%(const BigInteger &A, const BigInteger &B) -> BigInteger {
     return BigInteger::module(A, B);
 }

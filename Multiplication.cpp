@@ -27,6 +27,6 @@ auto BigInteger::multiplication(const BigInteger &A, const BigInteger &B) -> Big
     return C;
 }
 
-auto operator*(BigInteger &A, BigInteger &B) -> BigInteger {
+auto operator*(const BigInteger &A, const BigInteger &B) -> BigInteger {
     return BigInteger::multiplication(A, B);
 }

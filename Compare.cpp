@@ -3,7 +3,7 @@
 //
 #include "BigInteger.hpp"
 
-auto BigInteger::compare(BigInteger A, BigInteger B) -> short {
+auto BigInteger::compare(const BigInteger &A, const BigInteger &B) -> short {
     if (A.is_negate ^ B.is_negate) {
         if (A.is_negate) {
             return -1;
@@ -29,26 +29,26 @@ auto BigInteger::compare(BigInteger A, BigInteger B) -> short {
     }
 }
 
-auto operator==(BigInteger &A, BigInteger &B) -> bool {
+auto operator==(const BigInteger &A, const BigInteger &B) -> bool {
     return BigInteger::compare(A, B) == 0;
 }
 
-auto operator<(BigInteger &A, BigInteger &B) -> bool {
+auto operator<(const BigInteger &A, const BigInteger &B) -> bool {
     return BigInteger::compare(A, B) == -1;
 }
 
-auto operator>(BigInteger &A, BigInteger &B) -> bool {
+auto operator>(const BigInteger &A, const BigInteger &B) -> bool {
     return BigInteger::compare(A, B) == 1;
 }
 
-auto operator<=(BigInteger &A, BigInteger &B) -> bool {
+auto operator<=(const BigInteger &A, const BigInteger &B) -> bool {
     return !(A > B);
 }
 
-auto operator>=(BigInteger &A, BigInteger &B) -> bool {
+auto operator>=(const BigInteger &A, const BigInteger &B) -> bool {
     return !(A < B);
 }
 
-auto operator!=(BigInteger &A, BigInteger &B) -> bool {
+auto operator!=(const BigInteger &A, const BigInteger &B) -> bool {
     return !(A == B);
 }

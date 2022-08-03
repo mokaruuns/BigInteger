@@ -29,18 +29,18 @@ public:
     static auto multiplication(const BigInteger &A, const BigInteger &B) -> BigInteger;
 
     // long realization
-    static auto division_to_long(BigInteger A, BigInteger B) -> BigInteger;
+    static auto division_to_long(const BigInteger &A, const BigInteger &B) -> BigInteger;
 
     // short realization
     static auto division_to_short(const BigInteger &A, const int &B) -> BigInteger;
 
-    static auto module(const BigInteger &A, BigInteger B) -> BigInteger;
+    static auto module(const BigInteger &A, const BigInteger &B) -> BigInteger;
 
     static auto sqrt(const BigInteger &A) -> BigInteger;
 
-    static auto pow(BigInteger &A, BigInteger &B) -> BigInteger;
+    static auto pow(const BigInteger &A, const BigInteger &B) -> BigInteger;
 
-    static auto compare(BigInteger A, BigInteger B) -> short;
+    static auto compare(const BigInteger &A, const BigInteger &B) -> short;
 
     auto to_str() -> string;
 
@@ -48,25 +48,25 @@ public:
 
     static auto odd(const BigInteger &A) -> bool;
 
-    friend auto operator==(BigInteger &A, BigInteger &B) -> bool;
+    friend auto operator==(const BigInteger &A, const BigInteger &B) -> bool;
 
-    friend auto operator<(BigInteger &A, BigInteger &B) -> bool;
+    friend auto operator<(const BigInteger &A, const BigInteger &B) -> bool;
 
-    friend auto operator>(BigInteger &A, BigInteger &B) -> bool;
+    friend auto operator>(const BigInteger &A, const BigInteger &B) -> bool;
 
-    friend auto operator<=(BigInteger &A, BigInteger &B) -> bool;
+    friend auto operator<=(const BigInteger &A, const BigInteger &B) -> bool;
 
-    friend auto operator>=(BigInteger &A, BigInteger &B) -> bool;
+    friend auto operator>=(const BigInteger &A, const BigInteger &B) -> bool;
 
-    friend auto operator!=(BigInteger &A, BigInteger &B) -> bool;
+    friend auto operator!=(const BigInteger &A, const BigInteger &B) -> bool;
 
-    friend auto operator+(BigInteger &A, BigInteger &B) -> BigInteger;
+    friend auto operator+(const BigInteger &A, const BigInteger &B) -> BigInteger;
 
-    friend auto operator-(BigInteger &A, BigInteger &B) -> BigInteger;
+    friend auto operator-(const BigInteger &A, const BigInteger &B) -> BigInteger;
 
-    friend auto operator*(BigInteger &A, BigInteger &B) -> BigInteger;
+    friend auto operator*(const BigInteger &A, const BigInteger &B) -> BigInteger;
 
-    friend auto operator/(BigInteger &A, BigInteger &B) -> BigInteger;
+    friend auto operator/(const BigInteger &A, const BigInteger &B) -> BigInteger;
 
-    friend auto operator%(BigInteger &A, BigInteger &B) -> BigInteger;
+    friend auto operator%(const BigInteger &A, const BigInteger &B) -> BigInteger;
 };

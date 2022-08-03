@@ -17,7 +17,7 @@ auto BigInteger::odd(const BigInteger &A) -> bool {
     return !even(A);
 }
 
-auto BigInteger::module(const BigInteger &A, BigInteger B) -> BigInteger {
+auto BigInteger::module(const BigInteger &A, const BigInteger &B) -> BigInteger {
     unsigned int num = B.digits.back();
     if (num == 0) {
         BigInteger N;

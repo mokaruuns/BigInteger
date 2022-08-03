@@ -30,6 +30,6 @@ auto BigInteger::subtract(const BigInteger &A, const BigInteger &B) -> BigIntege
     return C;
 }
 
-auto operator-(BigInteger &A, BigInteger &B) -> BigInteger {
+auto operator-(const BigInteger &A, const BigInteger &B) -> BigInteger {
     return BigInteger::subtract(A, B);
 }

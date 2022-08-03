@@ -30,6 +30,6 @@ auto BigInteger::sum(const BigInteger &A, const BigInteger &B) -> BigInteger {
     return C;
 }
 
-auto operator+(BigInteger &A, BigInteger &B) -> BigInteger {
+auto operator+(const BigInteger &A, const BigInteger &B) -> BigInteger {
     return BigInteger::sum(A, B);
 }
